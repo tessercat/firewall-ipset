@@ -1,4 +1,4 @@
-# Commands to restore, flush and reload ipsets. 
+# Commands to restore, flush and reload ipsets.
 BIN=/sbin/ipset
 BASE=/opt/ipset
 SETS=($($BIN list -name)) # IP sets in memory.
@@ -18,7 +18,7 @@ for ipset in blacklist4 blacklist6 whitelist4 whitelist6; do
     contains $ipset ${SETS[@]}
     if [ $? -ne 0 ]; then
         $BIN restore -file $BASE/sets/$ipset
-        logger -p local0.info "Restored ipset $ipset"
+        echo "Restored ipset $ipset"
     fi
 
     # Flush and reload the set.
@@ -29,5 +29,5 @@ for ipset in blacklist4 blacklist6 whitelist4 whitelist6; do
             $BIN add $ipset $line
         done < $file
     fi
-    logger -p local0.info "Flushed and reloaded ipset $ipset"
+    echo "Flushed and reloaded ipset $ipset"
 done
