@@ -1,6 +1,6 @@
 # Commands to restore, flush and reload ipsets.
 BIN=/sbin/ipset
-BASE=/opt/ipset
+BASE=/opt/firewall/ipset
 SETS=($($BIN list -name)) # IP sets in memory.
 
 contains() {
