@@ -12,7 +12,7 @@ contains() {
     return 1
 }
 
-for ipset in blacklist4 blacklist6 whitelist4 whitelist6; do
+for ipset in admin4 admin6 block4 block6; do
 
     # Restore the set if it's not in memory.
     contains $ipset ${SETS[@]}

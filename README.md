@@ -8,9 +8,7 @@ the iptables rules and systemd services
 in [stack-deploy](https://github.com/tessercat/stack-deploy)
 and with the [firewall-api](https://github.com/tessercat/firewall-api)
 Django project
-to provide a simple Linux firewall
-with a global blacklist
-and an optional SSH port whitelist.
+to provide a simple Linux firewall.
 
 Run the bash commands
 before loading iptables rules.
@@ -19,8 +17,8 @@ Place lists of addresses
 in the `lists` directory,
 one address per line,
 in files named
-`blacklist4`, `blacklist6`,
-`whitelist4` and `whitelist6`,
+`block4`, `block6`,
+`admin4` and `admin6`,
 and run the bash commands
 to init, flush and load the sets.
 
